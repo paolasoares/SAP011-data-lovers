@@ -1,15 +1,13 @@
-import { example } from './data.js';
-import countries from './data/countries/countries.js';
 import data from './data/countries/countries.js';
 
-const countriesData = data.countriesData;
+const countries = data.countries;
 
-const listCoutry = document.getElementById('#root')
+const listCoutry = document.getElementById('root')
 
-countriesData.forEach(country => {
+countries.forEach(country => {
     const item = document.createElement('li');
     item.textContent = `
-    País: ${countries.name}
+    País: ${country.name.official}
     
     `
     listCoutry.appendChild(item)
