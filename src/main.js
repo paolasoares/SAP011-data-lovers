@@ -4,14 +4,73 @@ const countries = data.countries;
 
 const listCoutry = document.getElementById('root')
 
-countries.forEach(country => {
-    const item = document.createElement('li');
-    item.textContent = `
-    País: ${country.name.official}
-    
-    `
-    listCoutry.appendChild(item)
-});
+// countries.forEach(country => {
+//     const item = document.createElement('li');
+//     item.textContent = `
+
+//     País: ${country.name.official}
+
+//     `
+//     listCoutry.appendChild(item)
+// });
+
+
+//       "name": {
+//         "common": "Guatemala",
+//         "official": "Republic of Guatemala"
+//       },
+//       "capital": [
+//         "Guatemala City"
+//       ],
+//       "languages": {
+//         "spa": "Spanish"
+//       },
+//       "continents": [
+//         "America"
+//       ],
+//       "flags": {
+//         "png": "https://flagcdn.com/w320/gt.png",
+//         "svg": "https://flagcdn.com/gt.svg",
+//         "alt": "The flag of Guatemala is composed of three equal vertical bands of light blue, white and light blue, with the national coat of arms centered in the white band."
+
+// "countries": [
+//     {
+//       "tld": [
+//         ".gt"
+//       ],
+//       "independent": true,
+//       "subregion": "Central America",
+//       "borders": [
+//         "BLZ",
+//         "SLV",
+//         "HND",
+//         "MEX"
+//       ],
+//       "area": 108889,
+//       "flag": "🇬🇹",
+//       "population": 16858333,
+//       "gini": {
+//         "2014": 48.3
+//       },
+//       "fifa": "GUA",
+//       "timezones": [
+//         "UTC-06:00"
+//       ],
+
+// // const showCards = (data) => {
+//     divCards.innerHTML = data.map(poke => `
+//       <section class="box">
+//         <h3 class="name-poke"> ${poke.name}</h3>
+//         <img class="image-poke" src=${poke.img} />
+//         <div class="content-card">
+//             <p><strong>Tipo:</strong> ${poke.type.join(", ")}</p>
+//             <p><strong>Ovo:</strong> ${poke.egg}</p>
+//             <p><strong>Chance:</strong> ${poke.avg_spawns} % </p>
+//             <p><strong>Fraquezas:</strong> ${poke.weaknesses.join(", ")}</p>   
+//         </div>
+//       </section>
+//     `).join("");
+//   };
 
 // Cada um contém informações sobre:
 
