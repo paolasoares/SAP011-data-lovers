@@ -13,6 +13,9 @@ countries.forEach(country => {
     `
     listCoutry.appendChild(item)
 });
+const nome;
+
+
 
 
 //       "name": {
