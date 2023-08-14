@@ -4,9 +4,19 @@ body {
     font-size: 1rem;
     line-height: 1.5em;
 }
-.conteiner-home{
-    background-image: url(img/img.jpg);
+
+.conteiner-cabecalho {
+    background-image: url(img/pexels-pixabay-269583.jpg);
     width: 100%;
-    height: 100px;
+    height: 57%;
     position: absolute;
+}
+
+.icon{
+    width: 48px;
+    /* Largura original do ícone */
+    height: 48px;
+    /* Altura original do ícone */
+    transition: transform 0.3s ease-in-out;
+    
 }
