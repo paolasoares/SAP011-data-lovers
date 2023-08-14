@@ -3,16 +3,17 @@ import data from './data/countries/countries.js';
 const countries = data.countries;
 
 const listCoutry = document.getElementById('root')
+const list = document.getElementById(list)
 
-// countries.forEach(country => {
-//     const item = document.createElement('li');
-//     item.textContent = `
+ countries.forEach(country => {
+    const item = document.createElement('li');
+    item.textContent = `
 
-//     País: ${country.name.official}
+    País: ${country.name.official}
 
-//     `
-//     listCoutry.appendChild(item)
-// });
+    `
+    listCoutry.appendChild(item)
+});
 
 
 //       "name": {
