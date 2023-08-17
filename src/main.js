@@ -14,6 +14,19 @@ countries.forEach(country => {
     listCoutry.appendChild(item)
 });
 
+/* funçoes do card */
+const card = document.querySelector('.card');
+
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click',() => {
+        if (card.classList.contains('card--flip')) {
+            card.classList.remove('card--flip');
+        } else {
+            card.classList.add('card--flip');
+        }
+    })
+})
+
 
 
 
