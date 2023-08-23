@@ -1,6 +1,6 @@
 import data from './data/countries/countries.js';
 
-const countries = data.countries;
+/*const countries = data.countries;
 
 const listCoutry = document.getElementById('root')
 
@@ -13,6 +13,8 @@ countries.forEach(country => {
     `
     listCoutry.appendChild(item)
 });
+*/
+
 
 /* funçoes do card */
 const card = document.querySelector('.card');

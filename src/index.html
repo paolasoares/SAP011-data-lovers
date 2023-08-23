@@ -1,45 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <title></title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
   <header>
-    <Section class="conteiner-cabecalho">
-      <div class="icons">
-        <ul>
-          <p>
-            <img src="img/icons/icon-aviao.png" alt="" class="icon">
-            <span>Passagem</span>
-          </p>
-        </ul>
-      </div>
-    </section>
-    <div>
-      <select name="ordenagem" id="alfabetica">
-        <option value="Ordenar De:" class="ordenagem">Ordenar:</option>
-        <option value="A-Z" class="ordenagem">A-Z</option>
-        <option value="Z-A" class="ordenagem">Z-A</option>
+    <div class="conteiner-cabecalho">
+      <figure>
+        <img src="./imagens/aviao-removebg-preview.png " class="aviao">
+        <!--botao de ordenar-->
+      </figure>
+      <select name="ordenagem" id="ordemAlfabetica" class="seletores">
+        <option>Ordenar por...</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
       </select>
+    </div>
+    <!--imagens passando-->
   </header>
-  <main>
-    <article class="card">
-     <div class="card__inner card__inner--front">
+    <section class ="container-slides">
+    <div class="content">
+      <div class="slides">
+        <input type="radio" name="slide" id="slide1">
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+
+        <figure class="slide s1">
+          <img src="./imagens/grecia.avif" alt="Grécia">
+        </figure>
+        <figure class="slide s2">
+          <img src="./imagens/italia.avif" alt="Itália">
+        </figure>
+        <figure class="slide s3">
+          <img src="./imagens/maldivas.avif" alt="Maldivas">
+        </figure>
+        <figure class="slide s4">
+          <img src="./imagens/paris.avif" alt="Paris">
+        </figure>
+
+        <div class="navigation">
+          <label class="bar" for="slide1"></label>
+          <label class="bar" for="slide2"></label>
+          <label class="bar" for="slide3"></label>
+          <label class="bar" for="slide4"></label>
+        </div>
+      </div>
+    </div>
+  
+    </section>
+     
+
+
+  <!--cards-->
+  <article class="card">
+    <div class="card__inner card__inner--front">
       <h2>frente</h2>
-      <!--<img src="https://flagcdn.com/gt.svg" alt="aaa">-->
       <button class="ler-mais">
         <span class="circulo" aria-hidden="true">
           <span class="icon arrow"></span>
         </span>
         <span class="button-text">Ler mais</span>
       </button>
-     </div>
-     <div class="card__inner card__inner--back">
+    </div>
+    <div class="card__inner card__inner--back">
       <h2>virar</h2>
       <button class="ler-mais">
         <span class="circulo" aria-hidden="true">
@@ -47,20 +75,10 @@
         </span>
         <span class="button-text">voltar</span>
       </button>
-     </div>
-    </article>
-
-    <!-- <button class="learn-more">
-  <span class="circle" aria-hidden="true">
-  <span class="icon arrow"></span>
-  </span>
-  <span class="button-text">Learn More</span>
-</button> -->
-    <div id="root"></div>
-  </main>
-  <footer></footer>
+    </div>
+  </article>
+  <div id="root"></div>
   <script src="main.js" type="module"></script>
- 
 </body>
 
 </html>
