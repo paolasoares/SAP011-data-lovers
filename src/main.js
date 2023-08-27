@@ -1,19 +1,41 @@
 import data from './data/countries/countries.js';
 
-/*const countries = data.countries;
+const countries = data.countries;
 
 const listCoutry = document.getElementById('root')
 
 countries.forEach(country => {
     const item = document.createElement('li');
-    item.textContent = `
-
-    País: ${country.name.official}
+    item.innerHTML = `
+    <article class="card">
+      <div class="card__inner card__inner--front">
+        <h2> País: ${country.name.common}</h2>
+        <img src= "${country.flags.png}">
+        <p> Fuso horário: ${country.timezones}</p>
+        <button class="ler-mais">
+          <span class="circulo" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Ler mais</span>
+        </button>
+      </div>
+      <div class="card__inner card__inner--back">
+        <h2>${country.subregion}</h2>
+        <p>${country.continents}</p>
+        <p>${country.languages[1]}</p>
+        <button class="ler-mais">
+          <span class="circulo" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">voltar</span>
+        </button>
+      </div>
+    </article>
 
     `
     listCoutry.appendChild(item)
 });
-*/
+
 
 
 /* funçoes do card */

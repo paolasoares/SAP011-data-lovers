@@ -99,19 +99,27 @@ input {
     margin-left: -60%;
 }
 
-
-/*cards*/
 .container-slides{
     position: relative;
 }
 
+/*cards*/
+
+#root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
 .card {
     display: flex;
-    place-content: baseline space-evenly;
-    place-items: stretch auto;
+    padding-left: 100px;
     transition: transform .4s;
     transform-style: preserve-3d;
-    margin-top: 130%;
+    margin-top: 10%;
+    width: 100px;
+    height: 300px;
 }
 
 .card--flip {
