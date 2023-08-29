@@ -12,15 +12,18 @@
     <div class="conteiner-cabecalho">
       <figure>
         <img src="./imagens/aviao-removebg-preview.png " class="aviao">
-        <!--botao de ordenar-->
       </figure>
-      <select name="ordenagem" id="ordemAlfabetica" class="seletores">
-        <option>Ordenar por...</option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
-      </select>
+      <!--botao de ordenar-->
+      <form class="options-navbar">
+        <select class="selecionar" id="ordenaçao">
+          <option disabled selected hidden> Ordernar por:</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+        </select>
+      </form>
     </div>
-    <!--imagens passando-->
+
+    <!--imagens passando
   </header>
   <section class="container-slides">
     <div class="content">
@@ -52,6 +55,7 @@
       </div>
     </div>
   </section>
+-->
   <div id="root"></div>
   <script src="main.js" type="module"></script>
 </body>

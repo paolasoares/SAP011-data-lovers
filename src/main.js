@@ -1,4 +1,5 @@
 import data from './data/countries/countries.js';
+import { sortData } from './dados.js';
 
 const countries = data.countries;
 
@@ -8,35 +9,39 @@ countries.forEach(country => {
     const item = document.createElement('li');
     item.innerHTML = `
     <article class="card">
-      <div class="card__inner card__inner--front">
-        <h2> País: ${country.name.common}</h2>
-        <img src= "${country.flags.png}">
+      <div class="frente">
+        <h2>  ${country.name.common}</h2>              
+        <img src= "${country.flags.png}">               
         <p> Fuso horário: ${country.timezones}</p>
         <button class="ler-mais">
-          <span class="circulo" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
           <span class="button-text">Ler mais</span>
         </button>
       </div>
-      <div class="card__inner card__inner--back">
+      <div class="verso">
         <h2>${country.subregion}</h2>
         <p>${country.continents}</p>
         <p>${country.languages[1]}</p>
         <button class="ler-mais">
-          <span class="circulo" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
           <span class="button-text">voltar</span>
         </button>
       </div>
     </article>
-
+    
     `
     listCoutry.appendChild(item)
 });
 
-
+/*const searchPaises = document.getElementById("search-div");
+searchPaises.addEventListener("input", (event) => {
+  const nomePaises = event.target.value;
+  const buscarPaises = filterNames(countries, nomePaises);
+  fillContainer(buscarPaises);
+});
+const barraBuscar = document.getElementById("ordenaçao");
+barraBuscar; addEventListener("change", function () {
+    const orderValue = barraBuscar.value;
+    fillContainer(sortData(countries, "firstnamecountry", orderValue));
+}); */
 
 /* funçoes do card */
 const card = document.querySelector('.card');
