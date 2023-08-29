@@ -106,7 +106,7 @@ input {
 /*cards*/
 
 #root{
-    display: flex;
+    /* display: flex; */
     list-style: none;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -115,7 +115,7 @@ input {
 
 
 
-/*
+
 .card {
     display: flex;
     transition: transform .4s;
@@ -126,7 +126,7 @@ input {
 }
 
 .card--flip {
-    transform: rotateY(180deg);
+   transform: rotateY(180deg);
 }
 
 .card__inner {
@@ -143,5 +143,5 @@ input {
 .card__inner--back {
     transform: rotateY(180deg);
     background-color: #6362c0;
-}*/
+}
 

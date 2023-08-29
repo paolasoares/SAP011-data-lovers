@@ -21,9 +21,7 @@ countries.forEach(country => {
         <h2>${country.subregion}</h2>
         <p>${country.continents}</p>
         <p>${country.languages[1]}</p>
-        <button class="ler-mais">
-          <span class="button-text">voltar</span>
-        </button>
+      
       </div>
     </article>
     
@@ -46,7 +44,7 @@ barraBuscar; addEventListener("change", function () {
 /* funçoes do card */
 const card = document.querySelector('.card');
 
-document.querySelectorAll('button').forEach(button => {
+document.querySelector('.ler-mais').forEach(button => {
     button.addEventListener('click',() => {
         if (card.classList.contains('card--flip')) {
             card.classList.remove('card--flip');
