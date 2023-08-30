@@ -6,29 +6,40 @@ const countries = data.countries;
 const listCoutry = document.getElementById('root')
 
 countries.forEach(country => {
-    const item = document.createElement('li');
-    item.innerHTML = `
+  const item = document.createElement('li');
+  item.innerHTML = `
+  <div class="card-container">
     <article class="card">
-      <div class="frente">
+      <div class="card-frente">
         <h2>  ${country.name.common}</h2>              
         <img src= "${country.flags.png}">               
         <p> Fuso horário: ${country.timezones}</p>
-        <button class="ler-mais">
+        <button class="flipButton">
           <span class="button-text">Ler mais</span>
         </button>
       </div>
-      <div class="verso">
+      <div class="card-verso">
         <h2>${country.subregion}</h2>
         <p>${country.continents}</p>
-        <p>${country.languages[1]}</p>
+        <p>${country.languages.spa }</p>
       
       </div>
     </article>
+    </div>
+
     
     `
-    listCoutry.appendChild(item)
-});
 
+  /* funçoes do card */
+  const flipButton = item.querySelector('.flipButton');
+  const card = item.querySelector('.card');
+
+  flipButton.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+
+  listCoutry.appendChild(item);
+});
 /*const searchPaises = document.getElementById("search-div");
 searchPaises.addEventListener("input", (event) => {
   const nomePaises = event.target.value;
@@ -41,18 +52,6 @@ barraBuscar; addEventListener("change", function () {
     fillContainer(sortData(countries, "firstnamecountry", orderValue));
 }); */
 
-/* funçoes do card */
-const card = document.querySelector('.card');
-
-document.querySelector('.ler-mais').forEach(button => {
-    button.addEventListener('click',() => {
-        if (card.classList.contains('card--flip')) {
-            card.classList.remove('card--flip');
-        } else {
-            card.classList.add('card--flip');
-        }
-    })
-})
 
 
 
@@ -108,7 +107,7 @@ document.querySelector('.ler-mais').forEach(button => {
 //             <p><strong>Tipo:</strong> ${poke.type.join(", ")}</p>
 //             <p><strong>Ovo:</strong> ${poke.egg}</p>
 //             <p><strong>Chance:</strong> ${poke.avg_spawns} % </p>
-//             <p><strong>Fraquezas:</strong> ${poke.weaknesses.join(", ")}</p>   
+//             <p><strong>Fraquezas:</strong> ${poke.weaknesses.join(", ")}</p>
 //         </div>
 //       </section>
 //     `).join("");
