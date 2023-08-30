@@ -1,5 +1,5 @@
 import data from './data/countries/countries.js';
-import { sortData } from './dados.js';
+import { sortData } from './data.js';
 
 const countries = data.countries;
 
@@ -9,9 +9,9 @@ countries.forEach(country => {
   const item = document.createElement('li');
   item.innerHTML = `
   <div class="card-container">
-    <article class="card">
+  <article class="card">
       <div class="card-frente">
-        <h2>  ${country.name.common}</h2>              
+      <h2>  ${country.name.common}</h2>              
         <img src= "${country.flags.png}">               
         <p> Fuso horário: ${country.timezones}</p>
         <button class="flipButton">
@@ -21,13 +21,9 @@ countries.forEach(country => {
       <div class="card-verso">
         <h2>${country.subregion}</h2>
         <p>${country.continents}</p>
-        <p>${country.languages.spa }</p>
-      
-      </div>
+        </div>
     </article>
-    </div>
-
-    
+    </div>    
     `
 
   /* funçoes do card */
@@ -40,17 +36,15 @@ countries.forEach(country => {
 
   listCoutry.appendChild(item);
 });
-/*const searchPaises = document.getElementById("search-div");
-searchPaises.addEventListener("input", (event) => {
-  const nomePaises = event.target.value;
-  const buscarPaises = filterNames(countries, nomePaises);
-  fillContainer(buscarPaises);
-});
+
+
+let countriesOrd = data.countries;
 const barraBuscar = document.getElementById("ordenaçao");
-barraBuscar; addEventListener("change", function () {
-    const orderValue = barraBuscar.value;
-    fillContainer(sortData(countries, "firstnamecountry", orderValue));
-}); */
+barraBuscar.addEventListener("change", function () {
+  const orderValue = barraBuscar.value;
+  countriesOrd = sortData(countries, "name.common", orderValue);
+  listCoutry.innerHTML = '';
+});
 
 
 

@@ -141,11 +141,12 @@ input {
     transition: transform 0.5s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px rgb(0, 0, 0.1);
-    background-color: #6362c0;
+    /* background-color: #6362c0; */
+    background-color: red;
+
 }
 
 .card-verso {
-    /* transform: rotateY(180deg); */
     transform: rotateY(180deg);
 }
 .card-container .flipped .card-frente{
