@@ -121,6 +121,7 @@ input {
 
 .card-container li {
     list-style: none;
+    
 }
 
 .card-container .card-container {
@@ -140,18 +141,27 @@ input {
     backface-visibility: hidden;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px rgb(0, 0, 0.1);
-    /* background-color: #6362c0; */
-    background-color: red;
 
 }
 
 .card-verso {
     transform: rotateY(180deg);
+    background-color: #6362c0;
 }
+
 .card-container .flipped .card-frente{
     transform: rotateY(180deg);
 }
 .card-container .flipped .card-verso{
     transform: rotateY(360deg);
+}
+
+.flipButton{
+    display: flex;
+    width: 50px;
+    height: 40px;
+    background-color: #bfd11a;
+}
+.card-verso::before{
+    z-index: -10;
 }

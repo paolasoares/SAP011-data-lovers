@@ -1,50 +1,48 @@
 import data from './data/countries/countries.js';
-import { sortData } from './data.js';
+import { sortCountries } from './data.js';
 
+const listCountry = document.getElementById('root');
 const countries = data.countries;
 
-const listCoutry = document.getElementById('root')
-
-countries.forEach(country => {
-  const item = document.createElement('li');
-  item.innerHTML = `
-  <div class="card-container">
-  <article class="card">
-      <div class="card-frente">
-      <h2>  ${country.name.common}</h2>              
-        <img src= "${country.flags.png}">               
-        <p> Fuso horário: ${country.timezones}</p>
-        <button class="flipButton">
-          <span class="button-text">Ler mais</span>
-        </button>
-      </div>
-      <div class="card-verso">
-        <h2>${country.subregion}</h2>
-        <p>${country.continents}</p>
+function renderCountries(countries) {
+  const items = countries.map((country) => `
+    <div class="card-container">
+      <article class="card">
+        <div class="card-frente">
+          <h2>${country.name.common}</h2>              
+          <img src="${country.flags.png}">               
+          <p>Fuso horário: ${country.timezones}</p>
+          <button class="flipButton">
+            <span class="button-text">Ler mais</span>
+          </button>
         </div>
-    </article>
-    </div>    
-    `
+        <div class="card-verso">
+          <h2>${country.subregion}</h2>
+          <p>${country.continents}</p>
+        </div>
+      </article>
+    </div>
+  `).join("");
 
-  /* funçoes do card */
-  const flipButton = item.querySelector('.flipButton');
-  const card = item.querySelector('.card');
-
-  flipButton.addEventListener('click', () => {
-    card.classList.toggle('flipped');
-  });
-
-  listCoutry.appendChild(item);
-});
+  listCountry.innerHTML = items;
+}
 
 
-let countriesOrd = data.countries;
+
+renderCountries(countries);
+
 const barraBuscar = document.getElementById("ordenaçao");
-barraBuscar.addEventListener("change", function () {
-  const orderValue = barraBuscar.value;
-  countriesOrd = sortData(countries, "name.common", orderValue);
-  listCoutry.innerHTML = '';
-});
+if (barraBuscar) {
+  barraBuscar.addEventListener("change", () => {
+    const orderValue = barraBuscar.value;
+    console.log(orderValue);
+    const sorted = sortCountries( countries, orderValue);
+    console.log(sorted);
+    renderCountries(sorted);
+  });
+}
+
+
 
 
 
