@@ -14,12 +14,7 @@ body {
 }
 
 
-.aviao {
-    display: flex;
-    width: 20%;
-    margin-left: 50%;
-    margin-top: 1%;
-}
+
 
 
 /* imagens passando*/
@@ -55,9 +50,9 @@ body {
     background-color: #6362c0;
 }
 
-input {
+/* input {
     display: none;
-}
+} */
 
 .slides {
     display: flex;

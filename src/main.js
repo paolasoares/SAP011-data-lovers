@@ -40,7 +40,6 @@ function renderCountries(countries) {
   });
 }
 
-renderCountries(countries);
 
 const barraBuscar = document.getElementById("ordenaçao");
 if (barraBuscar) {
@@ -53,16 +52,17 @@ if (barraBuscar) {
   });
 }
 
-const pesquisa = document.querySelector('input-pesquisa')
+const pesquisa = document.querySelector('.input-pesquisa')
 pesquisa.addEventListener('input', () => {
   const termoDePesquisa = pesquisa.value;
   console.log(termoDePesquisa)
   const paisesFiltrados = filtraPaises(countries, termoDePesquisa);
   console.log(paisesFiltrados)
-
+  
   renderCountries(paisesFiltrados);
 })
 
+renderCountries(countries);
 
 
 
