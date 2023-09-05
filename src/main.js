@@ -1,14 +1,15 @@
 import data from './data/countries/countries.js';
 import { sortCountries } from './data.js';
+import { filtraPaises } from './data.js';
 
-const listCountry = document.getElementById('root');
 const countries = data.countries;
 
 const listCoutry = document.getElementById('root')
 
-countries.forEach(country => {
-  const item = document.createElement('li');
-  item.innerHTML = `
+function renderCountries(countries) {
+  countries.forEach(country => {
+    const item = document.createElement('li');
+    item.innerHTML = `
   <div class="card-container">
   <article class="card">
       <div class="card-frente">
@@ -27,17 +28,17 @@ countries.forEach(country => {
     </div>    
     `
 
-  /* funçoes do card */
-  const flipButton = item.querySelector('.flipButton');
-  const card = item.querySelector('.card');
+    /* funçoes do card */
+    const flipButton = item.querySelector('.flipButton');
+    const card = item.querySelector('.card');
 
-  flipButton.addEventListener('click', () => {
-    card.classList.toggle('flipped');
+    flipButton.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+
+    listCoutry.appendChild(item);
   });
-
-  listCoutry.appendChild(item);
-});
-
+}
 
 renderCountries(countries);
 
@@ -46,74 +47,27 @@ if (barraBuscar) {
   barraBuscar.addEventListener("change", () => {
     const orderValue = barraBuscar.value;
     console.log(orderValue);
-    const sorted = sortCountries( countries, orderValue);
+    const sorted = sortCountries(countries, orderValue);
     console.log(sorted);
     renderCountries(sorted);
   });
 }
 
+const pesquisa = document.querySelector('input-pesquisa')
+pesquisa.addEventListener('input', () => {
+  const termoDePesquisa = pesquisa.value;
+  console.log(termoDePesquisa)
+  const paisesFiltrados = filtraPaises(countries, termoDePesquisa);
+  console.log(paisesFiltrados)
+
+  renderCountries(paisesFiltrados);
+})
 
 
 
 
 
 
-//       "name": {
-//         "common": "Guatemala",
-//         "official": "Republic of Guatemala"
-//       },
-//       "capital": [
-//         "Guatemala City"
-//       ],
-//       "languages": {
-//         "spa": "Spanish"
-//       },
-//       "continents": [
-//         "America"
-//       ],
-//       "flags": {
-//         "png": "https://flagcdn.com/w320/gt.png",
-//         "svg": "https://flagcdn.com/gt.svg",
-//         "alt": "The flag of Guatemala is composed of three equal vertical bands of light blue, white and light blue, with the national coat of arms centered in the white band."
-
-// "countries": [
-//     {
-//       "tld": [
-//         ".gt"
-//       ],
-//       "independent": true,
-//       "subregion": "Central America",
-//       "borders": [
-//         "BLZ",
-//         "SLV",
-//         "HND",
-//         "MEX"
-//       ],
-//       "area": 108889,
-//       "flag": "🇬🇹",
-//       "population": 16858333,
-//       "gini": {
-//         "2014": 48.3
-//       },
-//       "fifa": "GUA",
-//       "timezones": [
-//         "UTC-06:00"
-//       ],
-
-// // const showCards = (data) => {
-//     divCards.innerHTML = data.map(poke => `
-//       <section class="box">
-//         <h3 class="name-poke"> ${poke.name}</h3>
-//         <img class="image-poke" src=${poke.img} />
-//         <div class="content-card">
-//             <p><strong>Tipo:</strong> ${poke.type.join(", ")}</p>
-//             <p><strong>Ovo:</strong> ${poke.egg}</p>
-//             <p><strong>Chance:</strong> ${poke.avg_spawns} % </p>
-//             <p><strong>Fraquezas:</strong> ${poke.weaknesses.join(", ")}</p>
-//         </div>
-//       </section>
-//     `).join("");
-//   };
 
 // Cada um contém informações sobre:
 
