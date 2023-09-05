@@ -4,29 +4,39 @@ import { sortCountries } from './data.js';
 const listCountry = document.getElementById('root');
 const countries = data.countries;
 
-function renderCountries(countries) {
-  const items = countries.map((country) => `
-    <div class="card-container">
-      <article class="card">
-        <div class="card-frente">
-          <h2>${country.name.common}</h2>              
-          <img src="${country.flags.png}">               
-          <p>Fuso horário: ${country.timezones}</p>
-          <button class="flipButton">
-            <span class="button-text">Ler mais</span>
-          </button>
-        </div>
-        <div class="card-verso">
-          <h2>${country.subregion}</h2>
-          <p>${country.continents}</p>
-        </div>
-      </article>
-    </div>
-  `).join("");
+const listCoutry = document.getElementById('root')
 
-  listCountry.innerHTML = items;
-}
+countries.forEach(country => {
+  const item = document.createElement('li');
+  item.innerHTML = `
+  <div class="card-container">
+  <article class="card">
+      <div class="card-frente">
+      <h2>  ${country.name.common}</h2>              
+        <img src= "${country.flags.png}">               
+        <p> Fuso horário: ${country.timezones}</p>
+        <button class="flipButton">
+          <span class="button-text">Ler mais</span>
+        </button>
+      </div>
+      <div class="card-verso">
+        <h2>${country.subregion}</h2>
+        <p>${country.continents}</p>
+        </div>
+    </article>
+    </div>    
+    `
 
+  /* funçoes do card */
+  const flipButton = item.querySelector('.flipButton');
+  const card = item.querySelector('.card');
+
+  flipButton.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+
+  listCoutry.appendChild(item);
+});
 
 
 renderCountries(countries);
