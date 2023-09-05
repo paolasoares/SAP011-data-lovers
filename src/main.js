@@ -8,17 +8,11 @@ function renderCountries(countries) {
   const items = countries.map((country) => `
     <div class="card-container">
       <article class="card">
-        <div class="card-frente">
-          <h2>${country.name.common}</h2>              
+          <h2>País: ${country.name.common}</h2>              
           <img src="${country.flags.png}">               
           <p>Fuso horário: ${country.timezones}</p>
-          <button class="flipButton">
-            <span class="button-text">Ler mais</span>
-          </button>
-        </div>
-        <div class="card-verso">
-          <h2>${country.subregion}</h2>
-          <p>${country.continents}</p>
+          <p> Continente: ${country.continents}</p>
+          <p> População: ${country.population}</p>
         </div>
       </article>
     </div>
@@ -43,7 +37,19 @@ if (barraBuscar) {
 }
 
 
-
+/*
+renderCountries(countries);
+const populaçao = document.getElementById ("ordpopulaçao");
+if (populaçao) {
+  populaçao.addEventListener("change", () => {
+    const popularidadeValue = populaçao.value;
+    console.log(popularidadeValue);
+    const popular = sortPopulation(populaçaoValue, population);
+    console.log(popular);
+    renderCountries(popular);
+  });
+}
+*/
 
 
 
