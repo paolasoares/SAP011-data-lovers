@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="style.css" />
@@ -8,9 +9,10 @@
 <body>
   <header>
     <div class="conteiner-cabecalho">
-      <figure>
-        <img src="./imagens/aviao-removebg-preview.png " class="aviao">
-      </figure>
+      <div class="filtro">
+        <input type="text" class="input-pesquisa" placeholder="Pesquisar...">
+        <ul id="resultado"></ul>
+      </div>
       <!--botao de ordenar-->
       <form class="options-navbar">
         <select class="selecionar" id="ordenaçao">
@@ -22,7 +24,7 @@
     </div>
   </header>
 
-    <!-- imagens passando -->
+    <!-- imagens passando
   <section class="container-slides">
     <div class="content">
       <div class="slides">
@@ -43,7 +45,7 @@
         <figure class="slide s4">
           <img src="./imagens/paris.avif" alt="Paris">
         </figure>
-
+        
         <div class="navigation">
           <label class="bar" for="slide1"></label>
           <label class="bar" for="slide2"></label>
@@ -52,8 +54,8 @@
         </div>
       </div>
     </div>
-  </section>
-
+  </section> -->
+  
   <div id="root"></div>
   <script src="main.js" type="module"></script>
 </body>
