@@ -6,7 +6,7 @@ const listCoutry = document.getElementById('root')
 
 function renderCountries(countries) {
   const items = countries.map((country) => `
-      <div class="card-container">
+      <div class="container">
         <article class="card">
             <h2>País: ${country.name.common}</h2>              
             <img src="${country.flags.png}">               
@@ -96,7 +96,7 @@ pesquisaContinenteInput.addEventListener("input", () => {
     for (const continente in mediaPopulacaoPorContinente) {
       const mediaPopulacao = mediaPopulacaoPorContinente[continente];
       const resultadoItem = document.createElement("div");
-      resultadoItem.innerHTML = `Média de população em ${continente}: ${mediaPopulacao}`;
+      resultadoItem.innerHTML = `<div class="resultado-filtro">Média de população em ${continente}: ${mediaPopulacao}</div>`;
       resultadoContainer.appendChild(resultadoItem);
     }
   } else {
