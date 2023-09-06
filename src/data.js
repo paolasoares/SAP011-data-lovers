@@ -14,6 +14,7 @@ export const sortCountries = (countries, sortOrder) => {
     return sorted.reverse();
   }
 }
+
 export const filtraPaises = (countries, termoDePesquisa) => {
   if (!termoDePesquisa) {
     return countries;
