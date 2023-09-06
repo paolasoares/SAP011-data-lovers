@@ -1,5 +1,4 @@
-* {
-    margin: 0;
+:root {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -9,13 +8,28 @@ body {
 }
 
 .conteiner-cabecalho {
-    background-color: #0d1038;
+    margin: 0 0 50px;
     display: flex;
+    height: 110px;
     opacity: 0.5;
+    background-color: #0d1038;
 }
+.filtrarContinente,
+.options-navbar,
+.filtro{
+    margin: 30px 105px 60px;
+}
+.pesquisarContinente{
+    width: 100%;
 
+}
+.input-pesquisa{
+    width: 100%;
+}
+.selecionar{
+    width: 200%;
 
-
+}
 
 /* imagens passando*/
 
@@ -63,7 +77,6 @@ body {
 
 .slide {
     width: 20%;
-    transition: .6s;
 }
 
 .slide img {
@@ -87,9 +100,14 @@ body {
     margin-left: -60%;
 }
 
-.container-slides {
+/* .container-slides {
     position: relative;
-}
+    /* .container-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 10px;
+    } 
+} */
 
 
 #root{

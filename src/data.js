@@ -27,3 +27,8 @@ export const filtraPaises = (countries, termoDePesquisa) => {
   });
   return paisesFiltrados;
 }
+
+
+//calculo agregado ok
+//limpeza do css
+//

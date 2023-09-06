@@ -5,10 +5,14 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="reset/reset.css" />
 </head>
 <body>
   <header>
     <div class="conteiner-cabecalho">
+      <div class="filtrarContinente">
+        <input type="text" id="pesquisarContinente" placeholder="Continente">
+      </div>
       <div class="filtro">
         <input type="text" class="input-pesquisa" placeholder="Pesquisar...">
         <ul id="resultado"></ul>
@@ -24,8 +28,7 @@
     </div>
   </header>
 
-    <!-- imagens passando -->
-  <section class="container-slides">
+  <!-- <section class="container-slides">
     <div class="content">
       <div class="slides">
         <input type="radio" name="slide" id="slide1">
@@ -55,7 +58,7 @@
       </div>
     </div>
   </section>
-  
+   -->
   <div id="root"></div>
   <script src="main.js" type="module"></script>
 </body>
