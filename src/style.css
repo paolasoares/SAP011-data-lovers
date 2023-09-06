@@ -1,48 +1,37 @@
-:root {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 body {
     background-color: #6362c0;
-  
+
 }
 
 .conteiner-cabecalho {
-    margin: 0 0 50px;
     display: flex;
-    height: 110px;
     opacity: 0.5;
     background-color: #0d1038;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    
 }
+
 .filtrarContinente,
 .options-navbar,
-.filtro{
-    margin: 30px 105px 60px;
+.filtro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.pesquisarContinente{
-    width: 100%;
 
-}
-.input-pesquisa{
-    width: 100%;
-}
-.selecionar{
-    width: 200%;
-
-}
 
 /* imagens passando*/
 
 .content {
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
     overflow: hidden;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 250px;
 }
 
 .navigation {
@@ -64,15 +53,17 @@ body {
     background-color: #6362c0;
 }
 
-/* input {
+input {
+    display: grid;
+}
+.inputradio{
     display: none;
-} */
-
+}
 .slides {
     display: flex;
-    width: 500%;
+    width: 400%;
     height: 100%;
-    
+
 }
 
 .slide {
@@ -110,21 +101,29 @@ body {
 } */
 
 
-#root{
+#root {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3%;
-    width: 104%;
-    height: 95%;
     margin-top: 450px;
+    font-size: 20px;
 }
-.card-container {
 
-}
-.card{
+img {
     display: flex;
-    
+    width: 250px;
+    height: 150px;
+}
+h2 {
+    display: flex;
+    width: 300px;
+    height: 35px;
+}
+
+.card {
+    display: flex;
     align-items: center;
     justify-content: baseline;
     flex-direction: column;
