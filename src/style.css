@@ -1,98 +1,43 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
-    background-color: #1a1955;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #111661;
 }
 
 .conteiner-cabecalho {
     display: flex;
-    opacity: 0.5;
     background-color: #0d1038;
     border: outset;
     border-color: #1a1955;
     flex-direction: column;
-    width: 205px;
-    height: 80px;
-    padding: 40px;
+    width: 232px;
+    height: 100px;
+    padding: 50px;
     gap: 15px;
 }
 
-
 .filtro {
-color: white;
-} 
+    color: white;
+}
 
-#pesquisarContinente, #ordenaçao, .input-pesquisa{
+#pesquisarContinente,
+#ordenaçao,
+.input-pesquisa {
     background-color: #79a7db;
     color: rgb(3, 8, 29);
-    font-size: 15px;
+    font-size: 18px;
 }
-/* imagens passando*/
-
-.content {
-    overflow: hidden;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 25px;
-    margin-top: 80px;
-}
-
-.navigation {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.bar {
-    border: 2px solid rgb(80, 101, 219);
-    margin: 6px;
-    border-radius: 5px;
-    transition: .4s;
-    padding: 5px;
-}
-
-.bar:hover {
-    background-color: #6362c0;
-}
-
-input[type=radio]{
-    display: none;
-}
-
-.slides {
-    display: flex;
-    width: 400%;
-    height: 100%;
-}
-
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-#slide1:checked~.s1 {
-    margin-left: -0%;
-}
-
-#slide2:checked~.s1 {
-    margin-left: -28%;
-}
-
-#slide3:checked~.s1 {
-    margin-left: -55%;
-}
-
 
 #root {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 3%;
-    margin-top: 450px;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
     font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 img {
@@ -100,17 +45,44 @@ img {
     width: 250px;
     height: 150px;
 }
+
 h2 {
-    display: flex;
     width: 300px;
     height: 35px;
+    justify-content: center;
 }
 
 .card {
     display: flex;
     align-items: center;
-    justify-content: baseline;
     flex-direction: column;
-    margin-top: 20px;
+    background-color: #3155a1;
+    border: outset;
+    border-color: #111661;
+}
+
+
+#inicio {
+    position: fixed;
+    bottom: 35px;
+    left: 5px;
+    width: 70px;
+    height: 70px;
+    background-color: #153986;
+    border-radius: 100px;
+    border: outset;
+    border-color: #0a1064;
+    opacity: 85%;
+    color: white;
+}
+/*rodape:*/
+
+footer {
+    text-align: center;
     background-color: #21299c;
+    color: rgb(252, 252, 252);
+}
+
+a {
+    color: rgb(255, 255, 255);
 }

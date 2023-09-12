@@ -1,4 +1,4 @@
-import { filtraPaises } from '../src/data.js';
+import { sortCountries, filtraPaises } from '../src/data.js';
 const array = [
   {
     "name": {
@@ -37,23 +37,37 @@ const array = [
     ],
   }]
 
+describe('sortCoutries', () => {
+  it('is a function', () => {
+    expect(typeof sortCountries).toBe('function');
+  });
+
+  it('returns `array ordenado de A-Z`', () => {
+    expect(sortCountries(array, "A-Z")).toStrictEqual([array[2], array[0], array[3], array[1]]);
+  });
+
+  it('returns `array ordenado de Z-A`', () => {
+    expect(sortCountries(array, "Z-A")).toStrictEqual([array[1], array[3], array[0], array[2]]);
+  });
+});
+
+
 describe('filtraPaises', () => {
   it('is a function', () => {
     expect(typeof filtraPaises).toBe('function');
   });
 
-//   it('returns `example`', () => {
-//     expect(example()).toBe('example');
-//   });
+  it('returns `array Guatemala`', () => {
+    expect(filtraPaises(array, "Guatemala")).toStrictEqual([array[0]]);
   });
+  it('returns `array Singapore`', () => {
+    expect(filtraPaises(array, "Singapore")).toStrictEqual([array[1]]);
+  });
+  it('returns `array Bosnia`', () => {
+    expect(filtraPaises(array, "Bosnia and Herzegovina")).toStrictEqual([array[2]]);
+  });
+  it('returns `array Maldivas`', () => {
+    expect(filtraPaises(array, "Maldives")).toStrictEqual([array[3]]);
+  });
+});
 
-
-// describe('anotherExample', () => {
-//   it('is a function', () => {
-//     expect(typeof anotherExample).toBe('function');
-//   });
-
-//   it('returns `anotherExample`', () => {
-//     expect(anotherExample()).toBe('OMG');
-//   });
-// });

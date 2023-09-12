@@ -1,5 +1,6 @@
 import data from './data/countries/countries.js';
-import { sortCountries, filtraPaises} from './data.js';
+import { sortCountries, filtraPaises } from './data.js';
+
 
 const countries = data.countries;
 const listCoutry = document.getElementById('root')
@@ -15,19 +16,15 @@ function renderCountries(countries) {
             </article>
             </div>
             `).join("");
-            listCoutry.innerHTML = items;
-          }
+  listCoutry.innerHTML = items;
+}
 
 const barraBuscar = document.getElementById("ordenaçao");
-if (barraBuscar) {
-  barraBuscar.addEventListener("change", () => {
-    const orderValue = barraBuscar.value;
-    console.log(orderValue);
-    const sorted = sortCountries(countries, orderValue);
-    console.log(sorted);
-    renderCountries(sorted);
-  });
-}
+barraBuscar.addEventListener("change", function () {
+  const orderValue = barraBuscar.value;
+  renderCountries(sortCountries(countries, orderValue));
+});
+
 
 const pesquisa = document.querySelector('.input-pesquisa')
 pesquisa.addEventListener('input', () => {
@@ -38,6 +35,7 @@ pesquisa.addEventListener('input', () => {
 
   renderCountries(paisesFiltrados);
 });
+
 
 function calcularMediaPopulacaoPorContinente(countries) {
   const populacaoPorContinente = {};
@@ -74,6 +72,8 @@ const pesquisaContinenteInput = document.getElementById("pesquisarContinente");
 
 pesquisaContinenteInput.addEventListener("input", () => {
   const termoDePesquisa = pesquisaContinenteInput.value.toLowerCase();
+  //para transformar o termo de pesquisa em letras minúsculas, para que a pesquisa não seja sensível a maiúsculas e minúsculas. 
+  // transformando tudo em letras minúsculas para garantir a correspondência     
 
   // Filtrar os países pelo termo de pesquisa
   const paisesFiltrados = countries.filter(countries => {
@@ -103,32 +103,9 @@ pesquisaContinenteInput.addEventListener("input", () => {
   }
 });
 
-
-
-
-// const pesquisaContinenteInput = document.getElementById("pesquisarContinente");
-// pesquisaContinenteInput.addEventListener("input", () => {
-//   const termoDePesquisa = pesquisaContinenteInput.value.toLowerCase();
-
-//   // Filtrar os países pelo termo de pesquisa
-//   const paisesFiltrados = countries.filter(countries => {
-//     const continente = countries.continents.toLowerCase();
-//     return continente.includes(termoDePesquisa);
-//   });
-
-//   // Calcular a média da população por continente para os países filtrados
-//   const mediaPopulacaoPorContinente = calcularMediaPopulacao(paisesFiltrados);
-
-//   // Exibir os resultados na interface do usuário (por exemplo, em um elemento HTML)
-//   const resultadoContainer = document.getElementById("resultado");
-//   resultadoContainer.innerHTML = "";
-
-//   for (const continente in mediaPopulacaoPorContinente) {
-//     const mediaPopulacao = mediaPopulacaoPorContinente[continente];
-//     const resultadoItem = document.createElement("div");
-//     resultadoItem.innerHTML = `Média de população em ${continente}: ${mediaPopulacao}`;
-//     resultadoContainer.appendChild(resultadoItem);
-//   }
-// });
-
 renderCountries(countries);
+const btn = document.querySelector("#inicio");
+
+btn.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+});
